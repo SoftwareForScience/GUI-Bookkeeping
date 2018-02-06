@@ -13,5 +13,5 @@ notifications:\
 	email:\
 		recipients:\
 		- naom1995@hotmail.com\
-on_succes: change # default: change\
-on_failure: always # default: always}
+	on_succes: change # default: change\
+	on_failure: always # default: always}
