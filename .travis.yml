@@ -1,11 +1,11 @@
 language: node_js
 node_js:
-- 8
-- 7
+- '8'
+- '7'
 
 notifications:
-	email:
-		recipients:
-		- naom1995@hotmail.com
-	on_succes: change # default: change
-	on_failure: always # default: always
+  email: 
+    recipients:
+      - naom1995@hotmail.com
+  on_success: change # default: change
+  on_failure: always # default: always
