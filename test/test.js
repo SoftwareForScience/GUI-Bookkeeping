@@ -1,17 +1,15 @@
 (() => {
-  'use strict';
-  const assert = require('assert');
-  var expect = require('chai').expect;
-  var request = require('request');
-    const myHello = require('../public/main');
+    'use strict';
+var expect = require('chai').expect;
+var request = require('request');
 
-    describe('test', function () {
-        it('should change color', function () {
-          request('http://localhost:63342', function (error, response, body) {
-              expect(body).to.equal('Test Page');
-              done();
-
-          });
+describe('test', function () {
+    it('should change color', function () {
+        request('http://localhost:63342', function (error, response, body) {
+            expect(body).to.equal('Test Page');
+            done();
         });
     });
-})();
+});
+})
+();
