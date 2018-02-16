@@ -9,3 +9,10 @@ notifications:
       - naom1995@hotmail.com
   on_success: change # default: change
   on_failure: always # default: always
+  
+  script: 
+  - "test/travis.rb"
+  
+  language: sass
+  before_install:
+  - gem install sass 
