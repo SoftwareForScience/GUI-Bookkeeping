@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cors test</title>
+    <link rel="stylesheet" type="text/css" href="SASS%20files/styles.css">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'">
+</head>
+<body>
+<h1>Hello</h1>
+
+<p id="demo"></p>
+<form action="http://145.28.160.176:8080/log/entries" method="get">
+<button id="test">Button</button> <!--This is a comment. Comments are not displayed in the browser-->
+</form>
+
+<div>
+    <form action="http://145.28.160.176:8080/log/entries" method="post" enctype="multipart/form-data"><br>
+
+        Created: <input type="text" name="created"><br>
+        Subsystem: <input type="number" name="subsystem"><br>
+        Class: <input type="number" name="class"><br>
+        Type: <input type="number" name="type"><br>
+        Run: <input type="number" name="run"><br>
+        Author: <input type="text" name="author"><br>
+        Title: <input type="text" name="title"><br>
+        Log entry text: <input type="text" name="log_entry_text"><br>
+        Follow ups: <input type="text" name="follow_ups"><br>
+
+         <input type="file" name="file">
+
+         <input type="submit" value="Submit">
+     </form>
+
+ </div>
+<script src = "node_modules/jquery/dist/jquery.js"></script>
+<script src = "node_modules/mithril/mithril.js"></script>
+<script src="Javascript%20files/main.js"></script>
+
+ </body>
+ </html>
+
+
