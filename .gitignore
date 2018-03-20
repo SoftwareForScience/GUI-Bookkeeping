@@ -3,6 +3,10 @@ logs
 package-lock.json
 .idea/
 .sass-cache/
+
+./public/SASS/*.css
+./public/SASS/*.css.map
+./public/CSS/*
 *.log
 npm-debug.log*
 yarn-debug.log*

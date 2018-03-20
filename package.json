@@ -3,16 +3,18 @@
     "version": "42.0.0",
     "author": "Amsterdam University of Applied Sciences",
     "scripts": {
-        "start": "node ./public/Javascript_files/main.js bin/app.js -d --watch",
+        "start": "",
         "test": "npm run mocha & npm run eslint",
         "mocha": "./node_modules/mocha/bin/mocha",
-        "eslint": "./node_modules/eslint/bin/eslint.js -c ./.eslintrc.js ./test/*.js  ./public/Javascript/*.js"
+        "eslint": "./node_modules/eslint/bin/eslint.js -c ./.eslintrc.js ./test/*.js  ./public/Javascript/*.js",
+        "build-css": "node-sass --include-path scss public/SASS/styles.scss   public/CSS/styles.css"
     },
     "devDependencies": {
         "eslint": "^4.18.2",
         "eslint-config-google": "^0.9.1",
         "eslint-plugin-security": "^1.4.0",
         "mocha": "^3.0.0",
-        "webpack": "^4.1.1"
+        "webpack": "^4.1.1",
+        "node-sass": "^3.5.5"
     }
 }
