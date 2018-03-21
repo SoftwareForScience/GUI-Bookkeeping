@@ -8,13 +8,12 @@
 
 /** This function changes the color of the button */
 (() => {
-  "use strict";
+  'use strict';
   $(function() {
-    console.log( "ready!" );
-    //m.render(document.body, "helhjgjhgjhgjhgjhglo world")
-    document.getElementById("test").addEventListener("click", changeColor);
+    // Console.log( "ready!" );
+    // m.render(document.body, "helhjgjhgjhgjhgjhglo world")
+    document.getElementById('test').addEventListener('click', changeColor);
   });
-
 })();
 
 // index.js
@@ -54,9 +53,12 @@
 //
 // }
 //
+/**
+ * Changes color of the button after pressing it
+ */
 function changeColor() {
   document.getElementById('test').style.backgroundColor = 'yellow';
-  console.log("before transaction");
+  // console.log("before transaction");
 }
 //
 // module.exports = {changeColor};
