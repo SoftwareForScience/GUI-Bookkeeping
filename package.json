@@ -1,23 +1,29 @@
 {
     "name": "GUI-Bookkeeping",
-    "version": "42.0.0",
+    "version": "1.0.0",
     "author": "Amsterdam University of Applied Sciences",
+    "main": "index.js",
     "scripts": {
-        "start": "",
+        "start": "webpack src/js/index.js -d --watch & http-server -p 8080",
+        "build": "webpack src/js/index.js -p && npm run build-css",
+        "publish": "npm run build && http-server -p 8080",
         "test": "npm run mocha & npm run eslint",
         "mocha": "./node_modules/mocha/bin/mocha",
-        "eslint": "./node_modules/eslint/bin/eslint.js -c ./.eslintrc.js ./test/*.js  ./public/Javascript/*.js",
-        "build-css": "node-sass --include-path scss public/SASS/styles.scss   public/CSS/styles.css"
+        "eslint": "./node_modules/eslint/bin/eslint.js -c ./.eslintrc.js ./test/*.js  ./src/js/*.js",
+        "build-css": "node-sass --include-path scss src/sass/styles.scss   dist/styles.css"
     },
     "devDependencies": {
         "eslint": "^4.18.2",
         "eslint-config-google": "^0.9.1",
         "eslint-plugin-security": "^1.4.0",
         "mocha": "^3.0.0",
-        "webpack": "^4.1.1",
-        "node-sass": "^3.5.5"
+        "webpack": "^4.2.0",
+        "node-sass": "^3.5.5",
+        "webpack-cli": "^2.0.13"
     },
     "dependencies": {
-        "chai": "^4.1.2"
+        "chai": "^4.1.2",
+        "http-server": "^0.11.1",
+        "mithril": "^1.1.6"
     }
 }
