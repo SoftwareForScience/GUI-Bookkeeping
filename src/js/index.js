@@ -1,5 +1,5 @@
 var m = require("mithril");
-
+require('../sass/styles.scss')
 const MartinsComponent = require("./MartinsComponent");
 const SplashScreen = require("./SplashScreen");
 const UserList = require("./UserList");
