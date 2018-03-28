@@ -1,10 +1,10 @@
-let m = require('mithril');
-
-const MartinsComponent = require('./MartinsComponent');
-const SplashScreen = require('./SplashScreen');
-const UserList = require('./UserList');
-const UserForm = require('./UserForm');
-const Layout = require('./Layout');
+var m = require("mithril");
+require('../sass/styles.scss')
+const MartinsComponent = require("./MartinsComponent");
+const SplashScreen = require("./SplashScreen");
+const UserList = require("./UserList");
+const UserForm = require("./UserForm");
+const Layout = require("./Layout");
 
 const root = document.body;
 
