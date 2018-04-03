@@ -14,7 +14,7 @@ module.exports = {
         User.save();
       }
     }, [
-      m('label.label', 'First sdadsfadsfjname'),
+      m('label.label', 'First name'),
       m('input.input[type=text][placeholder=First name]', {
         oninput: m.withAttr('value', function(value) {
           User.current.firstName = value;

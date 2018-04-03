@@ -1,16 +1,14 @@
 let m = require('mithril');
 
-var User = {
+let User = {
   list: [],
-  loadList: function(vnodes) {
-    // ToDO Make XHR call
+  loadList: function() {
     return m.request({
       method: 'GET',
-      url: 'https://rem-rest-api.herokuapp.com/api/users',
+      url: 'https://rem-rest-api.herokuapp.com/api/users?offset=0&limit=11',
       withCredentials: true
     })
       .then(function(result) {
-        // console.log(result);
         User.list = result.data;
       });
   },
@@ -34,7 +32,31 @@ var User = {
       data: User.current,
       withCredentials: true
     });
+  },
+
+  add: function(data) {
+    return m.request({
+      method: 'POST',
+      url: 'https://rem-rest-api.herokuapp.com/api/users/',
+      data: data, // send first name, last name and automaticalliy add id
+      withCredentials: true
+    })
+    // .then(function(result) {
+    // console.log(result)
+    ;
+
+    // return m.request({
+    //   method: 'GET',
+    //   url: 'https://rem-rest-api.herokuapp.com/api/users/',
+    //   withCredentials: true
+    // })
+    //   .then(function(result) {
+    //     // console.log(result);
+    //   })
+    // ;
   }
 
 };
 module.exports = User;
+
+

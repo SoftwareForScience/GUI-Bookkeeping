@@ -1,12 +1,12 @@
-var m = require("mithril");
-require('../sass/styles.scss')
-const MartinsComponent = require("./MartinsComponent");
-const SplashScreen = require("./SplashScreen");
-const UserList = require("./UserList");
-const UserForm = require("./UserForm");
-const Layout = require("./Layout");
+const m = require('mithril');
+require('../sass/styles.scss');
+const UserList = require('./UserList');
+const UserForm = require('./UserForm');
+const Layout = require('./Layout');
+const UserCreation = require('./UserCreation');
 
 const root = document.body;
+
 
 m.route(root, '/list', {
   '/list': {
@@ -18,8 +18,10 @@ m.route(root, '/list', {
     render: function(vnode) {
       return m(Layout, m(UserForm, vnode.attrs));
     }
+  },
+  '/adduser': {
+    render: function() {
+      return m(Layout, m(UserCreation));
+    }
   }
 });
-
-// m.mount(root, UserList);
-// m.route(root, "/splash", { "/splash": SplashScreen, "/hello": MartinsComponent } );
