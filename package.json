@@ -4,8 +4,8 @@
     "author": "Amsterdam University of Applied Sciences",
     "main": "index.js",
     "scripts": {
-        "start": "webpack src/js/index.js -d --watch & http-server -p 8080",
-        "build": "webpack src/js/index.js -p && npm run build-css",
+        "start": "webpack src/js/index.js -d --watch & http-server -p 8080 & node ../Backend-Bookkeeping/app/main.js",
+        "build": "webpack src/js/index.js -p",
         "publish": "npm run build && http-server -p 8080",
         "test": "npm run mocha & npm run eslint",
         "mocha": "./node_modules/mocha/bin/mocha",
@@ -13,20 +13,21 @@
     },
     "devDependencies": {
         "css-loader": "^0.28.11",
-        "eslint": "^4.18.2",
+        "eslint": "^4.19.1",
         "eslint-config-google": "^0.9.1",
         "eslint-plugin-security": "^1.4.0",
         "mocha": "^3.0.0",
-        "node-sass": "^4.0.0",
+        "node-sass": "^4.9.0",
         "sass-loader": "^6.0.7",
         "scss-loader": "0.0.1",
         "style-loader": "^0.20.3",
-        "webpack": "^4.2.0",
-        "webpack-cli": "^2.0.13"
+        "webpack": "^4.7.0",
+        "webpack-cli": "^2.1.3"
     },
     "dependencies": {
         "chai": "^4.1.2",
         "http-server": "^0.11.1",
-        "mithril": "^1.1.6"
+        "mithril": "^1.1.6",
+        "winston": "^2.4.2"
     }
 }

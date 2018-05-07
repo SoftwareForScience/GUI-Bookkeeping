@@ -5,7 +5,7 @@ module.exports = {
   view: function() {
     return m('form', {
       onsubmit: function(e) {
-        e.preventDefault();
+        e.prefentDefault();
         User.add(inputData);
       }
     },
