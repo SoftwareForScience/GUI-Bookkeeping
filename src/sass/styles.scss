@@ -23,4 +23,8 @@ body,.input,.button{font:normal 16px Verdana;}
 .td,.th {border: 1px solid #dddddd;text-align: left;padding: 8px;}
 tr:nth-child(even) {background-color: #dddddd;}
 
+.bar{background-color: cadetblue;border-style:solid;height: 30px;}
+.menu-button{background: #ffffff;border:1px solid #ddd;border-radius:3px;color:#333;margin:10px 2px 10px;padding:3px 15px;text-decoration:none; width: 30%;}
+.submit-button{background: #ffffff;border:1px solid #ddd;border-radius:3px;color:#333;display:block;margin:10px 0 10px;padding:10px 15px;text-decoration:none; width: 50%;}
+
 a {text-align: center;}

@@ -7,7 +7,11 @@ module.exports = {
     return m('form', {
       onsubmit: function(e) {
         e.preventDefault();
-        Log.addData(parseInputDataToJson());
+        // Log.addData(parseInputDataToJson());
+        Log.addData(inputData);
+        // .then(navigate, function(reason) {
+        //   // console.log('Yo alles is kapot, omdat: {}', reason);
+        // });
       }
     },
     [
@@ -60,26 +64,23 @@ module.exports = {
           inputData.log_entry_text = value;
         })
       }),
-      m('button.button[type = submit]', 'Submit')
+      m('button#button.submit-button[type = submit]', 'Submit')
       // m('a.button', {href:'#!/logList'}, 'Submit')
     ]);
   }
 };
 const inputData = {};
-/**
- * Converts form into JSON.
- * @param {json} inputData Stringyfy form data.
- * @return {json} The stingyfied form data
- */
-function parseInputDataToJson() {
-  return JSON.stringify(inputData);
-}
-
-
-// function submitForm(){
-//   alert('Send JSON');
-//   var xhr = new XMLHttpRequest();
-//   //getelementbyid en dan op de onlclick functie van de
-//  button deze functie aanroepen en dan jsnon stringify
+// /**
+//  * Converts form into JSON.
+//  * @param {json} inputData Stringyfy form data.
+//  * @return {json} The stingyfied form data
+//  */
+// function parseInputDataToJson() {
+//   return JSON.stringify(inputData);
 // }
-// xhr.send(JSON.stringify(inputData));
+/**
+ */
+// function navigate() {
+//   m.route.set('/fileUpload');
+// }
+
