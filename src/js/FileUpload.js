@@ -10,7 +10,7 @@
 //                 m('br'),
 //                 m('input[type = file]'),
 //                 m('button.submit-button[type = submit]','Submit')
-//             ],
+//             ]
 //             )]
 //     }
 // }

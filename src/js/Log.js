@@ -5,7 +5,7 @@ let Log = {
   loadList: function() {
     return m.request({
       method: 'GET',
-      url: 'http://localhost:8290/api/all/entries?personid=0&name=Anonymous&token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MCwidXNlcm5hbWUiOiJBbm9ueW1vdXMiLCJhY2Nlc3MiOjAsImlhdCI6MTUyNjYzNzg0NCwiZXhwIjoxNTI2NzI0MjQ0LCJpc3MiOiJvMi11aSJ9.TA_eYF0kty5Cpqbf3XnXynYjSUgGHVvS-CGKEWHzCn4'
+      url: 'http://localhost:8290/api/all/entries?personid=0&name=Anonymous&token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MCwidXNlcm5hbWUiOiJBbm9ueW1vdXMiLCJhY2Nlc3MiOjAsImlhdCI6MTUyNzA2OTQ0MywiZXhwIjoxNTI3MTU1ODQzLCJpc3MiOiJvMi11aSJ9.v0nGTGD5c2QhAhNmRHcksR-4jFSn1TYjciRxStcZAJ8'
       // withCredentials: true
     });
     // .then(function(data) {

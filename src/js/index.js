@@ -2,15 +2,15 @@ const m = require('mithril');
 module.import = '../sass/styles.scss';
 const LogList = require('./LogList');
 const CreateLog = require('./CreateLog');
-const AppBase = require('./AppBase');
 const welcomeScreen = require('./Welcome');
 const fileUpload = require('./FileUpload');
 const detailedView = require('./DetailedView');
+const navBar = require('./NavBar');
 
 const headerDiv = document.getElementById('header');
 const contentDiv = document.getElementById('content');
 
-m.mount(headerDiv, AppBase);
+m.mount(headerDiv, navBar);
 m.route(contentDiv, '/logList',
   {
     '/logList': LogList,

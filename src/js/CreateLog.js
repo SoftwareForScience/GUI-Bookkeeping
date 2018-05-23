@@ -1,5 +1,5 @@
 const m = require('mithril');
-const Log = require('./Log');
+// const Log = require('./Log');
 
 module.exports = {
   // oninit: Log.addData(),
@@ -8,9 +8,9 @@ module.exports = {
       onsubmit: function(e) {
         e.preventDefault();
         // Log.addData(parseInputDataToJson());
-        Log.addData(inputData);
+        // Log.addData(inputData)
         // .then(navigate, function(reason) {
-        //   // console.log('Yo alles is kapot, omdat: {}', reason);
+        // //   // console.log('Yo alles is kapot, omdat: {}', reason);
         // });
       }
     },

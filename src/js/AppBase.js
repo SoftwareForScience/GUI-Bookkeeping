@@ -4,7 +4,6 @@ module.exports = {
   view: function() {
     return [
       m('div.bar', [
-        // m('h1', 'This is static on the webpage!'),
         m('a.menu-button', {href: '#!/welcomeScreen'}, 'Alice'),
         m('a.menu-button', {href: '#!/logList'}, 'Loglist'),
         m('a.menu-button', {href: '#!/createLog'}, 'Create log'),
