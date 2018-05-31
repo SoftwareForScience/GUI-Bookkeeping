@@ -1,37 +1,35 @@
 const m = require('mithril');
 let Log = require('./Log');
-// let item;
+let item;
 
-// item = {author : 'Kees'}
+item = {author: 'Kees', log_entry_text: 'Hello world'};
 
 module.exports = {
   oninit: function() {
-    m.route.get();
     let id = m.route.param().id;
-    // console.log(id);
-    Log.getSingle(id).then(function(/* data*/) {
-      // item = data;
-      // console.log('i');
-      // console.log(item);
-      // console.log('Auteur: '+item[0].author);
-      // console.log(item[0].class);
+    Log.getSingle(id).then(function(data) {
+      item = data[0];
       // let author = item[0].author;
-    }).catch(function(/* err*/) {});
-    /* console.log(err);*/
+    });// .catch(function( err) {});
     // function(error){
-    //     console.log(error);
-    //     console.log('a');
     // })
   },
   view: function() {
     return [
-      m('', 'Detailed view Log'),
-      m('.user-list-item', [
-        m('', 'Author: Karel'),
-        m('', 'Log Title: Run 1'),
-        m('', 'Log text: Run was succesful!')
-      ])
-      // m('.user-list-item', 'Author:' + item.author.trim())
+      m(`.user-list-item`,
+        `Log title: ${item.title}
+      Date: ${item.created}
+      Run: ${item.run}
+      Run id: ${item.run_id}
+      Subsystem: ${item.subsystem}
+      Type: ${item.type}
+      Class: ${item.class}
+      Log: ${item.log_entry_text}
+      Follow-up: ${item.follow_ups}
+      Author: ${item.author.trim()}
+    `)
     ];
   }
 };
+
+

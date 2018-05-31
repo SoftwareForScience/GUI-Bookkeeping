@@ -1,25 +1,29 @@
 const m = require('mithril');
-module.import = '../sass/styles.scss';
+// module.import = '../sass/styles.scss';
+// import '../sass/styles.scss';
 const LogList = require('./LogList');
 const CreateLog = require('./CreateLog');
 const welcomeScreen = require('./Welcome');
 const fileUpload = require('./FileUpload');
 const detailedView = require('./DetailedView');
 const navBar = require('./NavBar');
+const Login = require('./LoginPage');
+const view = require('./MoveSystem');
 
 const headerDiv = document.getElementById('header');
 const contentDiv = document.getElementById('content');
 
 m.mount(headerDiv, navBar);
-m.route(contentDiv, '/logList',
+m.route(contentDiv, '/logIn', // /welcomeScreen
   {
+    '/logIn': Login,
+    '/view': view,
     '/logList': LogList,
     '/createLog': CreateLog,
     '/welcomeScreen': welcomeScreen,
     '/fileUpload': fileUpload,
     '/detailedView': detailedView
   } );
-
 
 // m.route(root, '/list', {
 //   '/list': {
