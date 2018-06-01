@@ -1,9 +1,10 @@
 const m = require('mithril');
+// const nav = require('./NavBar');
 
 module.exports = {
-  // onintit: login(),
+//   onintit: login(),
   view: function() {
-    return m('form', [
+    return m('', [
       m('div[style = margin:auto;]', [
         m('label', 'User name:'),
         ' ',
@@ -14,7 +15,8 @@ module.exports = {
         m('br'),
         m('label[style = color:black;]', 'Password'),
         m('input[type = text]'),
-        m('button[id = gone]', 'Log in'),
+        // m('button[id = gone]', {href:'#!/detailedView'},'Log in'),
+        m('a', {href: '#!/welcomeScreen'}, 'Log in'),
         m('p[id = demo]', 'Test')
       ])
     ]);
@@ -24,7 +26,9 @@ module.exports = {
 // function login() {
 //   if (m.route .get = '/login') {
 //     // console.log('hello');
+//     nav.render = null;
 //   }
+// }
 
 //   function Check() {
 //     if (document.getElementById('shift').checked = true) {
