@@ -11,13 +11,13 @@ module.exports = {
           m('option', 'Hanna'),
           m('option', 'Klaas'),
           m('option', 'Nina'),
-          m('option', 'first'),
-          m('option', 'first'),
-          m('option', 'first'),
-          m('option', 'first'),
-          m('option', 'first'),
-          m('option', 'first'),
-          m('option', 'first')
+          m('option', 'Harry'),
+          m('option', 'Klaas'),
+          m('option', 'Henry'),
+          m('option', 'Ali'),
+          m('option', 'Mike'),
+          m('option', 'Hanna'),
+          m('option', 'Leo')
         ]),
         m('button', 'Move out')
       ]),
@@ -29,13 +29,13 @@ module.exports = {
           m('option', 'Hanna'),
           m('option', 'Klaas'),
           m('option', 'Nina'),
-          m('option', 'first'),
-          m('option', 'first'),
-          m('option', 'first'),
-          m('option', 'first'),
-          m('option', 'first'),
-          m('option', 'first'),
-          m('option', 'first')
+          m('option', 'Hanna'),
+          m('option', 'Leo'),
+          m('option', 'Frank'),
+          m('option', 'Hans'),
+          m('option', 'Karel'),
+          m('option', 'Nina'),
+          m('option', 'Maarten')
         ]),
         m('button', 'Move in')
       ])

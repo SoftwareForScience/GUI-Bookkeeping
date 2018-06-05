@@ -5,20 +5,21 @@ let Log = {
   loadList: function() {
     return m.request({
       method: 'GET',
-      url: 'http://localhost:8290/api/all/entries?personid=0&name=Anonymous&token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MCwidXNlcm5hbWUiOiJBbm9ueW1vdXMiLCJhY2Nlc3MiOjAsImlhdCI6MTUyNzc2Mjc5MCwiZXhwIjoxNTI3ODQ5MTkwLCJpc3MiOiJvMi11aSJ9.iB9RiHMnErmlkCHTy5LzH4UmtMqgZ20-b4iD9hfS7XU'
+      url: 'http://localhost:8290/api/all/entries?personid=0&name=Anonymous&token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MCwidXNlcm5hbWUiOiJBbm9ueW1vdXMiLCJhY2Nlc3MiOjAsImlhdCI6MTUyODE4OTgwMiwiZXhwIjoxNTI4Mjc2MjAyLCJpc3MiOiJvMi11aSJ9.jjpQLVwGXHemgHFseGvJFTPhWr4tg0TKFYb1OBwRE3w'
       // withCredentials: true
-    }).then(function(data) {
-      Log.list = data;
-    }/* , function(reason) {
-      // console.log(reason);
-    }*/
-    );
+    });
+    // .then(function(data) {
+    //   Log.list = data;
+    // }, function(reason) {
+    //   // console.log(reason);
+    // }
+    // );
   },
   addData: function(data) {
     return m.request({
       method: 'POST',
       /* eslint max-len: ["error", { "ignoreUrls": true }]*/
-      url: 'http://localhost:8290/api/post/entry/data?personid=0&name=Anonymous&token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MCwidXNlcm5hbWUiOiJBbm9ueW1vdXMiLCJhY2Nlc3MiOjAsImlhdCI6MTUyNzc2Mjc5MCwiZXhwIjoxNTI3ODQ5MTkwLCJpc3MiOiJvMi11aSJ9.iB9RiHMnErmlkCHTy5LzH4UmtMqgZ20-b4iD9hfS7XU',
+      url: 'http://localhost:8290/api/post/entry/data?personid=0&name=Anonymous&token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MCwidXNlcm5hbWUiOiJBbm9ueW1vdXMiLCJhY2Nlc3MiOjAsImlhdCI6MTUyODE4OTgwMiwiZXhwIjoxNTI4Mjc2MjAyLCJpc3MiOiJvMi11aSJ9.jjpQLVwGXHemgHFseGvJFTPhWr4tg0TKFYb1OBwRE3w',
       //   headers: {
       //       'Content-Type' : 'application/json'
       //   },
@@ -41,7 +42,7 @@ let Log = {
   getSingle: function(id) {
     return m.request({
       method: 'GET',
-      url: 'http://localhost:8290/api/single/entry/' + id + '?personid=0&name=Anonymous&token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MCwidXNlcm5hbWUiOiJBbm9ueW1vdXMiLCJhY2Nlc3MiOjAsImlhdCI6MTUyNzc2Mjc5MCwiZXhwIjoxNTI3ODQ5MTkwLCJpc3MiOiJvMi11aSJ9.iB9RiHMnErmlkCHTy5LzH4UmtMqgZ20-b4iD9hfS7XU'
+      url: 'http://localhost:8290/api/single/entry/' + id + '?personid=0&name=Anonymous&token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MCwidXNlcm5hbWUiOiJBbm9ueW1vdXMiLCJhY2Nlc3MiOjAsImlhdCI6MTUyODE4OTgwMiwiZXhwIjoxNTI4Mjc2MjAyLCJpc3MiOiJvMi11aSJ9.jjpQLVwGXHemgHFseGvJFTPhWr4tg0TKFYb1OBwRE3w'
     });
   }
 };

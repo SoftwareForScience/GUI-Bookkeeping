@@ -25,6 +25,7 @@ module.exports = {
       Type: ${item.type}
       Class: ${item.class}
       Log: ${item.log_entry_text}
+      
       Follow-up: ${item.follow_ups}
       Author: ${item.author.trim()}
     `)

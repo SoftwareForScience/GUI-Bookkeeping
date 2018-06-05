@@ -2,33 +2,26 @@ const m = require('mithril');
 // const nav = require('./NavBar');
 
 module.exports = {
-//   onintit: login(),
+  // onintit: bla(),
   view: function() {
-    return m('', [
-      m('div[style = margin:auto;]', [
-        m('label', 'User name:'),
-        ' ',
-        m('input[type= radio][id = shift][name = role][value = Shifter]'),
-        ' Shifter ',
-        m('input[type = radio][id = src][name = role][value = SubsystemCoordinator]'),
-        ' Subsystem run Coordinator',
-        m('br'),
-        m('label[style = color:black;]', 'Password'),
-        m('input[type = text]'),
-        // m('button[id = gone]', {href:'#!/detailedView'},'Log in'),
-        m('a', {href: '#!/welcomeScreen'}, 'Log in'),
-        m('p[id = demo]', 'Test')
+    return m('form.border', [
+      m('div.image-container', [
+        m('img.img', {src: '../../images/ALICE.PNG'})
+      ]),
+      m('div.container', [
+        m('label', 'Username'),
+        m('input.input-login[type = text][placeholder= Enter username]'),
+        m('label', 'Password'),
+        m('input.input-login[type = text][placeholder= Enter password]'),
+        m('a.button.button-login[type = submit]', {href: '#!/welcomeScreen'}, 'Login'),
+        m('p', 'Remember me')
+      ]),
+      m('div.container[style = background-color: #f1f1f1]', [
+        m('span[style = float: right; padding-top: 16px;]', 'Alice')
       ])
     ]);
   }
 };
-
-// function login() {
-//   if (m.route .get = '/login') {
-//     // console.log('hello');
-//     nav.render = null;
-//   }
-// }
 
 //   function Check() {
 //     if (document.getElementById('shift').checked = true) {
@@ -52,8 +45,3 @@ module.exports = {
 //       x.style.display = 'none';
 //     }
 //   }}
-
-// //   function myFunction() {
-// //     document.getElementById("demo").innerHTML = "Hello World";
-// //   }
-// }
