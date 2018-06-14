@@ -33,7 +33,9 @@
         "bootstrap": "^4.1.1",
         "chai": "^4.1.2",
         "http-server": "^0.11.1",
+        "jquery": "^3.3.1",
         "mithril": "^1.1.6",
+        "popper.js": "^1.14.3",
         "winston": "^2.4.2"
     }
 }
