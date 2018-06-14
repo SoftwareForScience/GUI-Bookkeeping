@@ -1,6 +1,7 @@
 const m = require('mithril');
+window.$ = window.jQuery = require('jquery');
 // module.import = '../sass/styles.scss';
-// import '../sass/styles.scss';
+import '../sass/styles.scss';
 const LogList = require('./LogList');
 const CreateLog = require('./CreateLog');
 const welcomeScreen = require('./Welcome');
@@ -13,32 +14,13 @@ const view = require('./MoveSystem');
 const headerDiv = document.getElementById('header');
 const contentDiv = document.getElementById('content');
 
-m.mount(headerDiv, navBar);
-m.route(contentDiv, '/logIn', // /welcomeScreen
-  {
-    '/logIn': Login,
-    '/view': view,
-    '/logList': LogList,
-    '/createLog': CreateLog,
-    '/welcomeScreen': welcomeScreen,
-    '/fileUpload': fileUpload,
-    '/detailedView': detailedView
-  } );
+m.route(document.body, '/logIn', {
+  '/logIn':         {render: () => m(Login)},
+  '/logList':       {render: () => m(navBar, m(LogList))},
+  '/createLog':     {render: () => m(navBar, m(CreateLog))},
+  '/welcomeScreen': {render: () => m(navBar, m(welcomeScreen))},
+  '/fileUpload':    {render: () => m(navBar, m(fileUpload))},
+  '/detailedView':  {render: () => m(navBar, m(detailedView))},
+  '/view':          {render: () => m(navBar, m(view))}
+})
 
-// m.route(root, '/list', {
-//   '/list': {
-//     render: function() {
-//       return m(Layout, m(UserList));
-//     }
-//   },
-//   '/edit/:id': {
-//     render: function(vnode) {
-//       return m(Layout, m(UserForm, vnode.attrs));
-//     }
-//   },
-//   '/adduser': {
-//     render: function() {
-//       return m(Layout, m(UserCreation));
-//     }
-//   }
-// });

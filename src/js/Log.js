@@ -5,21 +5,20 @@ let Log = {
   loadList: function() {
     return m.request({
       method: 'GET',
-      url: 'http://localhost:8290/api/all/entries?personid=0&name=Anonymous&token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MCwidXNlcm5hbWUiOiJBbm9ueW1vdXMiLCJhY2Nlc3MiOjAsImlhdCI6MTUyODI4NTA2NywiZXhwIjoxNTI4MzcxNDY3LCJpc3MiOiJvMi11aSJ9.jnPQCWV60LAhcpyKzzEwjUh0Q-6InUOW_FSMMB8xP7o'
+      url: 'http://localhost:8290/api/all/entries/?data?personid=0&name=Anonymous&token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MCwidXNlcm5hbWUiOiJBbm9ueW1vdXMiLCJhY2Nlc3MiOjAsImlhdCI6MTUyODk3MDMxNCwiZXhwIjoxNTI5MDU2NzE0LCJpc3MiOiJvMi11aSJ9.xlM1yPT9R8XHECxgLYjiDku0QYdcXNfP5WSWFrnELUQ'
       // withCredentials: true
-    });
-    // .then(function(data) {
-    //   Log.list = data;
-    // }, function(reason) {
-    //   // console.log(reason);
-    // }
-    // );
+    }).then(function(data) {
+      Log.list = data;
+    }, function(reason) {
+      console.log(reason);
+    }
+    );
   },
   addData: function(data) {
     return m.request({
       method: 'POST',
       /* eslint max-len: ["error", { "ignoreUrls": true }]*/
-      url: 'http://localhost:8290/api/post/entry/data?personid=0&name=Anonymous&token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MCwidXNlcm5hbWUiOiJBbm9ueW1vdXMiLCJhY2Nlc3MiOjAsImlhdCI6MTUyODI4NTA2NywiZXhwIjoxNTI4MzcxNDY3LCJpc3MiOiJvMi11aSJ9.jnPQCWV60LAhcpyKzzEwjUh0Q-6InUOW_FSMMB8xP7o',
+      url: 'http://localhost:8290/api/post/entry/data?personid=0&name=Anonymous&token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MCwidXNlcm5hbWUiOiJBbm9ueW1vdXMiLCJhY2Nlc3MiOjAsImlhdCI6MTUyODk3NTY3MiwiZXhwIjoxNTI5MDYyMDcyLCJpc3MiOiJvMi11aSJ9.yNJv7cUQJXN3k_j-QEsGymhU54Gc01LkF7yn2W4Rub4',
       //   headers: {
       //       'Content-Type' : 'application/json'
       //   },
@@ -28,21 +27,36 @@ let Log = {
     });
   },
 
-  // getToken: function() {
+  // addFile: function(id, data) {
+
   //   return m.request({
+  //     method: 'POST',
+  //     url: 'http://localhost:8290/api/upload/' + id + '?personid=0&name=Anonymous&token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MCwidXNlcm5hbWUiOiJBbm9ueW1vdXMiLCJhY2Nlc3MiOjAsImlhdCI6MTUyODkxNTc4NSwiZXhwIjoxNTI5MDAyMTg1LCJpc3MiOiJvMi11aSJ9.WT72Jdq_z9KLEGLNpOO8krdFa8hPn6Dr-F8wKfQMP_k',
+  //     data: {file: data}
+  //   });
+  // },
+
+  // getToken: function() {
+    
+  //   return new Promise((res, rej) => {
+  //     m.request({
   //     method: 'GET',
-  //     url: 'http://localhost:8290'
-  //   }). then(function(result) {},
-  //     function(wentWrong) {
-  //       // console.log(m.route.get());
-  //       // console.log(`a ${wentWrong}`);
+  //     url: 'http://localhost:8290/',
+  //     extract: function (xhr) {
+  //       const URL = xhr.responseURL;
+  //       const REGEX = /token=([A-Z|a-z|0-9|.|-]*)/; // takes the value after token= 
+  //       const TOKEN = URL.match(REGEX)[1];
+  //       console.log(TOKEN);
+  //       res(TOKEN)
+  //       return {xhr}}
   //     });
-  // }, Try for later
+  //   });
+  // }, 
 
   getSingle: function(id) {
     return m.request({
       method: 'GET',
-      url: 'http://localhost:8290/api/single/entry/' + id + '?personid=0&name=Anonymous&token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MCwidXNlcm5hbWUiOiJBbm9ueW1vdXMiLCJhY2Nlc3MiOjAsImlhdCI6MTUyODI4NTA2NywiZXhwIjoxNTI4MzcxNDY3LCJpc3MiOiJvMi11aSJ9.jnPQCWV60LAhcpyKzzEwjUh0Q-6InUOW_FSMMB8xP7o'
+      url: 'http://localhost:8290/api/single/entry/' + id + '?data?personid=0&name=Anonymous&token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MCwidXNlcm5hbWUiOiJBbm9ueW1vdXMiLCJhY2Nlc3MiOjAsImlhdCI6MTUyODk3MDMxNCwiZXhwIjoxNTI5MDU2NzE0LCJpc3MiOiJvMi11aSJ9.xlM1yPT9R8XHECxgLYjiDku0QYdcXNfP5WSWFrnELUQ'
     });
   }
 };

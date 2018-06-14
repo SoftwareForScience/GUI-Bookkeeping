@@ -4,7 +4,7 @@ body,.input,.button{font:normal 16px Verdana;}
 .menu{margin: 0 0 30px;}
 
 .user-list {list-style:none;margin:0 0 10px;padding:0;}
-.user-list-item {background:#fafafa;border:1px solid #ddd;color:#333;display:block;margin:0 0 1px;padding:8px 15px;text-decoration:none;white-space:pre-line;}
+.user-list-item {background:#fafafa;border:1px solid #d62631;color:#333;display:block;margin:0 0 1px;padding:8px 15px;text-decoration:none;white-space:pre-line;}
 .user-list-item:hover {text-decoration:underline;}
 
 .label {display: block;margin: 0 0 5px;}
@@ -35,5 +35,8 @@ a {text-align: center;}
 .input-login{width: 100%;padding: 12px 20px;margin: 8px 0;display: inline-block;border: 1px solid #ccc; box-sizing: border-box;}
 .image-container{text-align: center;margin: 24px 0px 12px 0px;}
 .container{padding: 16px;}
-.button-login{background-color: #ef8239; color: white; padding: 14px 20px;margin: 8px 0;border: none;cursor: pointer;width: 100%;}
+.button-login{background-color: #ef8239 !important; color: white; padding: 14px 20px;margin: 8px 0;border: none;cursor: pointer;width: 100%;}
 .img{width: 20%;}
+.login{padding: 14px 20px;margin: 8px 0;border: none;cursor: pointer;width: 100%;}
+
+.footer {position: fixed;left: 0;bottom: 0;width: 100%;background-color: #283944;color: white;text-align: center;}

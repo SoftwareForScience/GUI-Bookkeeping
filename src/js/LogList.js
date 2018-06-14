@@ -3,7 +3,6 @@ let Log = require('./Log');
 
 module.exports = {
   oninit: function() {
-    // Log.getToken();
     Log.loadList();
   },
   view: function() {
@@ -15,9 +14,10 @@ module.exports = {
         Author: ${log.author.trim()}
         Log id: ${log.run_id}
       `);
-    }), [
-      m('a.button', {href: '#!/createLog'}, 'Create Log')
-    ]);
+    }),
+    m('div.footer', [
+      m('p[style = float: right;margin:0;]', 'Software for Science')
+    ]))
   }
 };
 /**
@@ -27,3 +27,5 @@ function userListItemOnClick(mouseEvent) {
   const id = mouseEvent.target.getAttribute('value');
   m.route.set('/detailedView', {id: id});
 }
+
+// Author: ${log.author.trim()}

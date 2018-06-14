@@ -1,47 +1,35 @@
 const m = require('mithril');
+const UserService = require('./UserService');
+const Log = require('./Log');
 // const nav = require('./NavBar');
 
 module.exports = {
-  // onintit: bla(),
   view: function() {
-    return m('form.border', [
+    return m('form.border', {onsubmit: logInUser}, [
       m('div.image-container', [
         m('img.img', {src: '../../images/ALICE.PNG'})
       ]),
       m('div.container', [
         m('label', 'Username'),
-        m('input.input-login[type = text][placeholder= Enter username]'),
+        m('input.input-login', {type: 'text', placeholder: 'Enter username'}),
         m('label', 'Password'),
-        m('input.input-login[type = text][placeholder= Enter password]'),
-        m('a.button.button-login[type = submit]', {href: '#!/welcomeScreen'}, 'Login'),
-        m('p', 'Remember me')
+        m('input.input-login', {placeholder: 'Enter password'}),
+        m('button.login[style = background-color: #d62631;color:white;]',{type: 'submit'}, 'Login'),
+        m('input[id=checkbox][type= checkbox][style= color:black;]'),
+        m('label[for=checkbox]', ' Remember me' )
       ]),
-      m('div.container[style = background-color: #f1f1f1]', [
-        m('span[style = float: right; padding-top: 16px;]', 'Alice')
+      m('div.footer', [
+        m('p[style = float: right;margin:0;]', 'Software for Science')
       ])
     ]);
   }
 };
 
-//   function Check() {
-//     if (document.getElementById('shift').checked = true) {
-//     // console.log('shifter');
-//     }
-//   }
+logInUser = function(data) {
+  data.preventDefault();
+  let username = data.target[0].value;
+  let role = username === 'Alice' ? 'subsystemruncoordinator' : 'shifter';
+  UserService.logInUser({name: username, roles: role});
+  m.route.set('/welcomeScreen');
+};
 
-// //   function Disappear(){
-// //       console.log('hello world');
-// //     var x = navBar.getElementById('navigation');
-// //     if(x.style.display === 'none'){
-// //         x.style.display = 'block';
-// //     }
-// //     else x.style.display = 'none';
-// //   }
-// {onclick: function Disappear() {
-//     let x = document.getElementById('demo');
-//     if (x.style.display === 'none') {
-//       x.style.display = 'block';}
-//     else {
-//       x.style.display = 'none';
-//     }
-//   }}
