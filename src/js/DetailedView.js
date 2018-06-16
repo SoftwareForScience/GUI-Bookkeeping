@@ -42,6 +42,7 @@ module.exports = {
         //   Author: ${item.author}
         // `
       ),
+      m('a.button', {href: '#!/logList'}, 'Back'),
       m('div.footer', [
         m('p[style = float: right;margin:0;]', 'Software for Science')
       ])

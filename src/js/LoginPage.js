@@ -13,7 +13,7 @@ module.exports = {
         m('label', 'Username'),
         m('input.input-login', {type: 'text', placeholder: 'Enter username'}),
         m('label', 'Password'),
-        m('input.input-login', {placeholder: 'Enter password'}),
+        m('input.input-login[type = password]', {placeholder: 'Enter password'}),
         m('button.login[style = background-color: #d62631;color:white;]',{type: 'submit'}, 'Login'),
         m('input[id=checkbox][type= checkbox][style= color:black;]'),
         m('label[for=checkbox]', ' Remember me' )

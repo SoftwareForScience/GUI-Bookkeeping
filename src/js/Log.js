@@ -1,11 +1,12 @@
 const m = require('mithril');
+const token = '?personid=0&name=Anonymous&token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MCwidXNlcm5hbWUiOiJBbm9ueW1vdXMiLCJhY2Nlc3MiOjAsImlhdCI6MTUyOTE2NTIzNCwiZXhwIjoxNTI5MjUxNjM0LCJpc3MiOiJvMi11aSJ9.52mlgTUJ-ydDNNMFd1zcPFSWaV06Kl1cRzgsTHTFlRs';
 
 let Log = {
   list: [],
   loadList: function() {
     return m.request({
       method: 'GET',
-      url: 'http://localhost:8290/api/all/entries/?data?personid=0&name=Anonymous&token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MCwidXNlcm5hbWUiOiJBbm9ueW1vdXMiLCJhY2Nlc3MiOjAsImlhdCI6MTUyODk3MDMxNCwiZXhwIjoxNTI5MDU2NzE0LCJpc3MiOiJvMi11aSJ9.xlM1yPT9R8XHECxgLYjiDku0QYdcXNfP5WSWFrnELUQ'
+      url: 'http://localhost:8290/api/all/entries/' + token
       // withCredentials: true
     }).then(function(data) {
       Log.list = data;
@@ -18,7 +19,7 @@ let Log = {
     return m.request({
       method: 'POST',
       /* eslint max-len: ["error", { "ignoreUrls": true }]*/
-      url: 'http://localhost:8290/api/post/entry/data?personid=0&name=Anonymous&token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MCwidXNlcm5hbWUiOiJBbm9ueW1vdXMiLCJhY2Nlc3MiOjAsImlhdCI6MTUyODk3NTY3MiwiZXhwIjoxNTI5MDYyMDcyLCJpc3MiOiJvMi11aSJ9.yNJv7cUQJXN3k_j-QEsGymhU54Gc01LkF7yn2W4Rub4',
+      url: 'http://localhost:8290/api/post/entry/data' + token,
       //   headers: {
       //       'Content-Type' : 'application/json'
       //   },
@@ -56,7 +57,7 @@ let Log = {
   getSingle: function(id) {
     return m.request({
       method: 'GET',
-      url: 'http://localhost:8290/api/single/entry/' + id + '?data?personid=0&name=Anonymous&token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MCwidXNlcm5hbWUiOiJBbm9ueW1vdXMiLCJhY2Nlc3MiOjAsImlhdCI6MTUyODk3MDMxNCwiZXhwIjoxNTI5MDU2NzE0LCJpc3MiOiJvMi11aSJ9.xlM1yPT9R8XHECxgLYjiDku0QYdcXNfP5WSWFrnELUQ'
+      url: 'http://localhost:8290/api/single/entry/' + id + token
     });
   }
 };

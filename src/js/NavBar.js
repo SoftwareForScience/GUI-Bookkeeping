@@ -13,22 +13,22 @@ module.exports = {
         m('div[class=collapse navbar-collapse][id=navbarSupportedContent]', [
           m('ul[class= navbar-nav mr-auto]', [
             m('li[class=nav-item active]', [
-              m('a[class= nav-link]', {href: '#!/welcomeScreen', onclick: $('.navbar-collapse').collapse('hide')}, [
+              m('a[class= nav-link]', {href: '#!/welcomeScreen', onclick: closeNavBar}, [
                 m('span[class= sr-only]', '(current)')
               ], 'Home')
             ]),
             m('li[class= nav-item]', [
-              m('a[class= nav-link]', {href: '#!/logList', onclick: $('.navbar-collapse').collapse('hide')}, 'Log list')
+              m('a[class= nav-link]', {href: '#!/logList', onclick: closeNavBar}, 'Log list')
             ]),
             m('li[class= nav-item]', [
-              m('a[class= nav-link]', {href: '#!/createLog', onclick: $('.navbar-collapse').collapse('hide')}, 'Create log')
+              m('a[class= nav-link]', {href: '#!/createLog', onclick: closeNavBar}, 'Create log')
             ]),
             UserService.getUser().roles === 'subsystemruncoordinator' ?
               m('li[class= nav-item]', [
-                m('a[class= nav-link]', {href: '#!/view', onclick: $('.navbar-collapse').collapse('hide')}, 'Move')
+                m('a[class= nav-link]', {href: '#!/view', onclick: closeNavBar}, 'Move')
               ]) : '',
             m('li[class= nav-item]', [
-              m('a[class= nav-link]', {href: '#!/logIn', onclick: $('.navbar-collapse').collapse('hide')}, 'Log out')
+              m('a[class= nav-link]', {href: '#!/logIn', onclick: closeNavBar}, 'Log out')
             ])
           ])
         ])
@@ -37,18 +37,9 @@ module.exports = {
     ];
   }
 };
-// $('.navbar-nav>li>a').on('click', function() {
-//   $('.navbar-collapse').collapse('hide');
-// });
-/** Doesn't show navbar at the login page (doesn't completely work yet)
- */
-// function dontShow() {
-//   console.log('hallo');
-//   let nav = document.getElementById('navigation');
-//   if (m.route.get = '/login') {
-//     nav.style.visibility = 'hidden';
-//   } else {
-//     nav.style.display = 'visible';
-//   }
-// }
+
+function closeNavBar() {
+  $('.navbar-collapse').collapse('hide');
+}
+
 

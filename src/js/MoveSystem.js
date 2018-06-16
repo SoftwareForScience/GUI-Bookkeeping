@@ -4,6 +4,7 @@ module.exports = {
   view: function() {
     return [
       m('div[style = display: inline-block; margin: 10px 70px 20px 11px;]', [
+        m('p','Your subsystem:'),
         m('select[multiple = multiple][size = 10]', [
           m('option', 'Henry hound'),
           m('option', 'Harry'),
@@ -22,6 +23,7 @@ module.exports = {
         m('button', 'Move out')
       ]),
       m('div[style = display: inline-block; margin: 10px 70px 20px 11px;]', [
+        m('p', 'People:'),
         m('select[multiple = multiple][size = 10]', [
           m('option', 'Henry hound'),
           m('option', 'Harry'),
@@ -38,6 +40,9 @@ module.exports = {
           m('option', 'Maarten')
         ]),
         m('button', 'Move in')
+      ]),
+      m('div.footer', [
+        m('p[style = float: right;margin:0;]', 'Software for Science')
       ])
     ];
   }

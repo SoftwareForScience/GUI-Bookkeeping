@@ -1,14 +1,19 @@
 const m = require('mithril');
 const Log = require('./Log');
 const random = Math.floor(Math.random() * 6) + 1 
+const types = ["Log Entry", "End Shift", "Other"];
+const template = {
+  end_shift: `This is the 'end of shift' report from shift: ... The shift went ... because ... the things I did this shift where ... `
+}
 
 module.exports = {
- oninit: () => {inputData.subsystem = 'something', inputData.created = '2018-09-01T22:00:00.000Z', inputData.class = '123', inputData.run = random},
+ oninit: () => {inputData.subsystem = 'something', inputData.class = '123', inputData.run = random, inputData.type = types[0]},
   view: function() {
     return m('form', {
       onsubmit: function(e) {
         e.preventDefault();
-        // Log.addData(parseInputDataToJson());
+        inputData.created = new Date().toJSON();
+
         Log.addData(inputData).then(navigate, function(reason) {
           console.log('Alles is kapot, omdat: {}', reason);
         });
@@ -22,44 +27,31 @@ module.exports = {
           inputData.run = value;
         })
       }),
-      m('label.label[style = display: none;]', 'Created:'),
-      m('input.input[type = text][placeholder = Created][name = created][style = display: none;]', {
-        oninput: m.withAttr('value', function(value) {
-          inputData.created = value;
-        })
-      }),
-      m('label.label[style = display: none;]', 'Subsystem:'),
-      m('input.input[type = text][placeholder = Subsystem][name = subsystem][style = display: none;]', {
-        oninput: m.withAttr('value', function(value = 'something') {
-          inputData.subsystem = value;
-        })
-      }),
-      m('label.label[style = display: none;]', 'Class:'),
-      m('input.input[type = text][placeholder = Class][name = class][style = display: none;]', {
-        oninput: m.withAttr('value', function(value) {
-          inputData.class = value;
-        })
-      }),
       m('label.label', 'Type:'),
-      m('input.input[type =text][placeholder = Type][name = type][required]', {
-        oninput: m.withAttr('value', function(value) {
-          inputData.type = value;
-        })
-      }),
+      m('select',{onchange: m.withAttr('value', function(value){
+        inputData.type = value;
+        if (value === types[1]) {
+          document.getElementById("body").value = template.end_shift;
+        }
+      })} ,[
+        m('option', types[0]),
+        m('option', types[1]),
+        m('option', types[2])
+      ]),
       m('label.label', 'Author'),
-      m('input.input[type = text][placeholder = Author][name = author][required]', {
+      m('input.input[type = text][placeholder = Author][name = author][required][maxlength=50]', {
         oninput: m.withAttr('value', function(value) {
           inputData.author = value;
         })
       }),
       m('label.label', 'Log title:' ),
-      m('input.input[type = text][placeholder = Log Title][name = title][required]', {
+      m('input.input[type = text][placeholder = Log Title][name = title][required][maxlength=50]', {
         oninput: m.withAttr('value', function(value) {
           inputData.title = value;
         })
       }),
       m('label.label', 'Log text:'),
-      m('textarea.inputfield[placeholder = Type log text here][name = log_entry_text][required]', {
+      m('textarea.inputfield[id = body][placeholder = Type log text here][name = log_entry_text][required][maxlength=500]', {
         oninput: m.withAttr('value', function(value) {
           inputData.log_entry_text = value;
         })

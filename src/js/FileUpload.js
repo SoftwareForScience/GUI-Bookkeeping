@@ -12,6 +12,7 @@ module.exports = {
     [
       m('label', 'You succesfully uploaded the log!'),
       m('br'),
+      m('a.button', {href: '#!/logList'}, 'Go to Log List')
       // m('button', {href: '#!logList'}, 'Back to Log list')
     ]);
   }

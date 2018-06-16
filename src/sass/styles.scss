@@ -40,3 +40,10 @@ a {text-align: center;}
 .login{padding: 14px 20px;margin: 8px 0;border: none;cursor: pointer;width: 100%;}
 
 .footer {position: fixed;left: 0;bottom: 0;width: 100%;background-color: #283944;color: white;text-align: center;}
+.right {margin-right:10px;background-color:#e5e5e5;float:right;width:30%;padding:15px;margin-top:7px;text-align:left;overflow-wrap: break-word;}
+
+@media only screen and (max-width:620px) {
+    /* For mobile phones make the width of element with class .right 100%: */
+     .right {
+      width:100%;margin: auto;}
+    }
