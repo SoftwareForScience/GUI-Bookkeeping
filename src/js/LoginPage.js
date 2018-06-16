@@ -11,7 +11,7 @@ module.exports = {
       ]),
       m('div.container', [
         m('label', 'Username'),
-        m('input.input-login', {type: 'text', placeholder: 'Enter username'}),
+        m('input.input-login[required]', {type: 'text', placeholder: 'Enter username'}),
         m('label', 'Password'),
         m('input.input-login[type = password]', {placeholder: 'Enter password'}),
         m('button.login[style = background-color: #d62631;color:white;]',{type: 'submit'}, 'Login'),

@@ -7,7 +7,7 @@ const template = {
 }
 
 module.exports = {
- oninit: () => {inputData.subsystem = 'something', inputData.class = '123', inputData.run = random, inputData.type = types[0]},
+ oninit: () => {inputData.subsystem = 'DAQ', inputData.class = '123', inputData.run = random, inputData.type = types[0]},
   view: function() {
     return m('form', {
       onsubmit: function(e) {
