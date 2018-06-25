@@ -29,19 +29,7 @@ module.exports = {
         m('br'),
         m('div', `Follow-up: ${item.follow_ups}`),
         m('div', `Author: ${item.author}`)
-      ]
-        //     `Log title: ${item.title}
-        //   Date: ${item.created}
-        //   Run: ${item.run}
-        //   Run id: ${item.run_id}
-        //   Subsystem: ${item.subsystem}
-        //   Type: ${item.type}
-        //   Class: ${item.class}
-        //   Log: ${item.log_entry_text}
-        //   Follow-up: ${item.follow_ups}
-        //   Author: ${item.author}
-        // `
-      ),
+      ]),
       m('a.button', {href: '#!/logList'}, 'Back'),
       m('div.footer', [
         m('p[style = float: right;margin:0;]', 'Software for Science')
